@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEMOS SNEAKERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#">LEMOS SNEAKERS</a>
+
+      <div class="nav__links">
+        <a class="nav__link nav__link--active" href="#">Coleções</a>
+        <a class="nav__link" href="#">Novidades</a>
+        <a class="nav__link" href="#">Arquivo</a>
+        <a class="nav__link" href="#">Revista</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="nav__search" aria-label="Pesquisar">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <div class="nav__cart" id="cart-trigger">
+          <span class="material-symbols-outlined nav__cart-icon">shopping_bag</span>
+          <span class="nav__cart-badge" id="cart-count">0</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div class="hero__bg">
+      <img
+        src="./img/vermelho.png"
+        alt="Aura V1 Sage Hero Background"
+        fetchpriority="high"
+      />
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__watermark">
+      <h1>LEMOS</h1>
+    </div>
+
+    <div class="hero__cta-group">
+      <p class="hero__tagline">Seu estilo fala antes de voçê dizer a primeira palavra.</p>
+      <a class="hero__btn" href="#collection">
+        <span>Compre Agora</span>
+      </a>
+    </div>
+
+    <div class="hero__scroll">
+      <div class="hero__scroll-bar"></div>
+    </div>
+  </header>
+
+  <!-- ── Main Content ── -->
+  <main class="main">
+
+
+      <!-- Product 1: Emerald — image left -->
+      <div class="product-card reveal" data-id="1">
+        <div class="product-card__image-wrap">
+          <div class="product-card__skeleton skeleton"></div>
+          <img
+            class="product-card__img"
+            src="./img/verde.png"
+            alt="Lemos 1"
+            loading="lazy"/>
+          
+        </div>
+
+        <div class="product-card__info">
+          <div>
+            <h4 class="product-card__name">LEMOS 1"</h4>
+            <p class="product-card__price">R$ 2.420,00</p>
+          </div>
+          <p class="product-card__desc">
+            Seu visual versátil permite combinações com diferentes peças de roupa, tornando-o uma escolha frequente tanto para fãs de basquete quanto para entusiastas da moda urbana.
+          </p>
+          <button class="add-btn" onclick="addToCart(event, this)">
+            ADICIONAR AO CARRINHO
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2: Crimson — image right -->
+      <div class="product-card product-card--reverse reveal" data-id="2">
+        <div class="product-card__info product-card__info--right">
+          <div>
+            <h4 class="product-card__name">LEMOS 2"</h4>
+            <p class="product-card__price">R$ 2.650,00</p>
+          </div>
+          <p class="product-card__desc">
+            A entressola com amortecimento proporciona conforto para o uso diário, enquanto o icônico logotipo Wings e o Swoosh reforçam a identidade histórica da linha criada por LEMOS.
+          </p>
+          <button class="add-btn" onclick="addToCart(event, this)">
+            ADICIONAR AO CARRINHO
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+        </div>
+
+        <div class="product-card__image-wrap">
+          <div class="product-card__skeleton skeleton"></div>
+          <img
+            class="product-card__img"
+            src="./img/azul.png"
+            alt="LEMOS 2"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Product 3: Sage — image left -->
+      <div class="product-card reveal" data-id="3">
+        <div class="product-card__image-wrap">
+          <div class="product-card__skeleton skeleton"></div>
+          <img
+            class="product-card__img"
+            src="./img/vermelho.png"
+            alt="LEMOS 0"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="product-card__info">
+          <div>
+            <h4 class="product-card__name">LEMOS 0"</h4>
+            <p class="product-card__price">R$ 2.890,00</p>
+          </div>
+          <p class="product-card__desc">
+            O modelo é frequentemente visto em coleções de sneakerheads e em colaborações especiais, mantendo viva a influência da marca LEMOS no universo da moda e do esporte. Sua combinação de herança esportiva e apelo contemporâneo faz dele um dos tênis mais procurados da atualidade.
+          </p>
+          <button class="add-btn" onclick="addToCart(event, this)">
+            ADICIONAR AO CARRINHO
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">LEMOS SNEAKERS</span>
+        <p class="footer__brand-desc">
+          Edição limitada para quem não aceita o comum.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__col-title">Loja</h5>
+        <a href="#">Coleções</a>
+        <a href="#">Novidades</a>
+        <a href="#">Arquivo</a>
+        <a href="#">Revista</a>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__col-title">Suporte</h5>
+        <a href="#">Envio</a>
+        <a href="#">Devoluções</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Termos de Serviço</a>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__col-title">Siga-nos</h5>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 LEMOS SNEAKERS. CALÇADOS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
