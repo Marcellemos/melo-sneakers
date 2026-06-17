@@ -78,8 +78,9 @@ function addToCart(event, button) {
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   const heroTitle = document.querySelector('.hero__watermark h1');
-  const heroBg    = document.querySelector('.hero__bg img');
+  const heroVideo = document.querySelector('.hero__video');
 
   if (heroTitle) heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
-  if (heroBg)    heroBg.style.transform    = `translateY(${scrolled * 0.15}px)`;
+  if (heroVideo)
+  heroVideo.style.transform = `translateY(${scrolled * 0.15}px)`;
 }, { passive: true });
