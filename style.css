@@ -64,6 +64,12 @@ html {
   --color-on-secondary: #ffffff;
   --color-on-tertiary: #ffffff;
 
+  /* Overlay / surface tints not part of the base palette */
+  --color-nav-bg: rgba(250, 249, 246, 0.8);
+  --color-nav-border: rgba(196, 199, 199, 0.3);
+  --color-hero-overlay: rgba(0, 0, 0, 0.4);
+  --color-footer-border: rgba(196, 199, 199, 0.2);
+
   /* Border Radius */
   --radius: 0.125rem;
   --radius-lg: 0.25rem;
@@ -192,12 +198,12 @@ img {
   top: 0;
   width: 100%;
   z-index: 50;
-  background-color: rgba(250, 249, 246, 0.8); /* surface/80 */
+  background-color: var(--color-nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(196, 199, 199, 0.3); /* outline-variant/30 */
+  border-bottom: 1px solid var(--color-nav-border);
   transition: all 0.3s;
-  height: 80px;
+  height: 60px;
 }
 
 .nav__inner {
@@ -210,12 +216,9 @@ img {
   height: 100%;
 }
 
-.nav__logo {
-  font-size: var(--fs-display-lg);
-  line-height: var(--lh-display-lg);
-  letter-spacing: -0.05em;
-  font-weight: 300;
-  color: var(--color-primary);
+.nav__logo img {
+  width: 60px;
+  height: 60px;
 }
 
 .nav__links {
@@ -266,6 +269,13 @@ img {
 
 .nav__cart {
   position: relative;
+  cursor: pointer;
+}
+
+.nav__cart:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius);
 }
 
 .nav__cart-icon {
@@ -325,7 +335,7 @@ img {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-hero-overlay);
 }
 
 .hero__watermark {
@@ -595,7 +605,7 @@ img {
   padding-inline: var(--margin-desktop);
   margin-top: var(--section-gap);
   padding-top: 3rem;
-  border-top: 1px solid rgba(196, 199, 199, 0.2);
+  border-top: 1px solid var(--color-footer-border);
 }
 
 .footer__copy {
