@@ -215,8 +215,8 @@ img {
 }
 
 .nav__logo img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .nav__links {
@@ -411,4 +411,220 @@ img {
 @keyframes bounce-scroll {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
+}
+
+/* MAIN CONTENT */
+.main {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--margin-desktop);
+  padding-block: var(--section-gap);
+}
+
+/* ── Product Card ── */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.product-card__image-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-surface-container-low);
+  overflow: hidden;
+}
+
+.product-card__skeleton {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.7s, opacity 1s;
+  opacity: 0;
+}
+
+.product-card__img:hover {
+  transform: scale(1.05);
+}
+
+.product-card__img.loaded {
+  opacity: 1;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.product-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-card__info--right {
+  order: -1; /* default: above image on mobile */
+  text-align: right;
+  align-items: flex-end;
+}
+
+.product-card__name {
+  font-size: var(--fs-display-lg);
+  line-height: var(--lh-display-lg);
+  letter-spacing: var(--ls-display-lg);
+  font-weight: var(--fw-display-lg);
+  margin-bottom: 1rem;
+}
+
+.product-card__price {
+  font-size: var(--fs-headline-lg);
+  line-height: var(--lh-headline-lg);
+  font-weight: var(--fw-label-caps);
+  letter-spacing: var(--ls-label-caps);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.product-card__desc {
+  color: var(--color-on-surface-variant);
+  max-width: 28rem;
+  line-height: 1.75;
+}
+
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 1rem 2rem;
+  font-size: var(--fs-label-caps);
+  line-height: var(--lh-label-caps);
+  letter-spacing: var(--ls-label-caps);
+  font-weight: var(--fw-label-caps);
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: gap 0.3s;
+  font-family: var(--font-family);
+}
+
+.add-btn:hover {
+  gap: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+  background-color: var(--color-surface-container-low);
+  width: 100%;
+  padding-block: var(--section-gap);
+}
+
+.footer__grid {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--margin-desktop);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer__brand-name {
+  font-size: var(--fs-label-caps);
+  letter-spacing: var(--ls-label-caps);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.footer__brand-desc {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-on-surface-variant);
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__col-title {
+  font-size: var(--fs-label-caps);
+  letter-spacing: var(--ls-label-caps);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.footer__col a {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-on-surface-variant);
+  opacity: 0.8;
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.footer__bottom {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--margin-desktop);
+  margin-top: var(--section-gap);
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-footer-border);
+}
+
+.footer__copy {
+  font-size: var(--fs-body-sm);
+  color: var(--color-on-surface-variant);
+  opacity: 0.6;
+}
+
+/* RESPONSIVE — TABLET / DESKTOP (md: 768px+) */
+@media (min-width: 768px) {
+  .nav__links {
+    display: flex;
+  }
+
+  .intro {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  /* Crimson: text left, image right */
+  .product-card--reverse .product-card__info--right {
+    order: 0; /* col 1 */
+  }
+
+  .product-card--reverse .product-card__image-wrap {
+    order: 1; /* col 2 */
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
